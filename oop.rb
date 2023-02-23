@@ -10,7 +10,7 @@ class Unicorn
     end
 
     def say(sentence)
-        return "*~* #{sentence} *~*"
+        "*~* #{sentence} *~*"
     end 
 end
 
@@ -20,14 +20,14 @@ end
 #  it should have a thirsty attribute, that is true by default
 #  it should have a drink method. When called, the thirsty attribute changes to false
 class Vampire
-    attr_reader :name :pet
     def initialize(name, pet = "bat")
         @name = name
-        @pet = "bat"
+        @pet = pet
         @thirsty = true
     end
+
     def drink
-        return @thirsty = false
+        @thirsty = false
     end
 end
 
@@ -49,10 +49,13 @@ class Dragon
         @rider = rider
         @color = color
         @is_hungry = true
+        @eat = 0
     end
-    def times_ate(meals)
-        if meals >= 4
-            return @is_hungry = false
+
+    def eat
+        @eat += 1
+        if @eat == 4
+            @is_hungry = false
         end
     end
 end
@@ -74,17 +77,26 @@ class Hobbit
         @is_adult = false
         @is_old = false
         @has_ring = false
+        
+        maturity
+
+        if @name = "Frodo"
+            @has_ring = true
+        end
     end
-    if age >= 33
-        @is_adult = true
+
+    def maturity
+        if @age >= 33
+            @is_adult = true
+        end
+                
+        if age >= 101
+            @is_old = true
+        end
     end
-    if age >= 101
-        @is_old = true
-    end
-    if @name = "Frodo"
-        @has_ring = true
-    end
+        
     def celebrate_birthday
-        return @age + 1
+        @age += 1
+        maturity
     end
 end
