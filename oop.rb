@@ -4,7 +4,7 @@
 # it should have a method called "say" that returns whatever string is passed in, with "*~*" at the beginning and end of the string
 
 class Unicorn
-    def intialize(name)
+    def initialize(name)
         @name = name
         @color = "silver"
     end
@@ -44,7 +44,7 @@ p v2
 #  it should have a is_hungry attribute that is true by default
 #  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
 class Dragon
-    def intialize(name, rider, color)
+    def initialize(name, rider, color)
         @name = name
         @rider = rider
         @color = color
